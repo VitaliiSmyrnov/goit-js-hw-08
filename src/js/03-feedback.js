@@ -1,3 +1,4 @@
+import throttle from 'lodash.throttle';
 import {
    saveToLS,
    loadFromLS,
@@ -22,13 +23,14 @@ function loadData() {
  }
  loadData();
 
-form.addEventListener('input', e => {
+form.addEventListener('input', throttle(onMsgElemInput, 500));
+function onMsgElemInput(e) {
    console.log(e.target);
    console.log(e.target.name);
-formData[e.target.name] = e.target.value;
-console.log(formData);
-saveToLS(LOCALSTORAGE_KEY, formData);
-});
+   formData[e.target.name] = e.target.value;
+   console.log(formData);
+   saveToLS(LOCALSTORAGE_KEY, formData);
+}
 
 form.addEventListener('submit', e => {
    e.preventDefault();

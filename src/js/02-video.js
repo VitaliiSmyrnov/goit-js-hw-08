@@ -20,8 +20,6 @@ function loadData() {
  loadData();
 
 const onPlay = function(data) {
-   console.log('played the video!');
-   console.log(data);
    saveToLS(LOCALSTORAGE_KEY, data);
 };
 

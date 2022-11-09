@@ -8,10 +8,10 @@ import {
 const form = document.querySelector(".feedback-form");
 const LOCALSTORAGE_KEY = "feedback-form-state";
 
-const formData = {};
+const formData = loadFromLS(LOCALSTORAGE_KEY);
 
 function loadData() {
-   for (let i = 0; i < localStorage.length; i++) {
+   for (let i = 0; i < localStorage[LOCALSTORAGE_KEY].length; i++) {
       if (localStorage[LOCALSTORAGE_KEY]) {
          const ObjectLS = loadFromLS(LOCALSTORAGE_KEY);
          let keys = Object.keys(ObjectLS);

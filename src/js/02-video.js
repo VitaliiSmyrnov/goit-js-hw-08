@@ -2,8 +2,7 @@ import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
 import {
    saveToLS,
-   loadFromLS,
-   removeLS
+   loadFromLS
  } from './storage.js';
 
 const iframe = document.querySelector('iframe');
